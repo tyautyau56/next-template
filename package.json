@@ -2,8 +2,12 @@
   "name": "next-template",
   "version": "1.0.0",
   "main": "src/pages/index.ts",
-  "author": "tyautyau56 <i19yanagi@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "webpack"
+    "start": "next start"
+  }
   "dependencies": {
     "next": "^10.0.0",
     "react": "^17.0.1",
