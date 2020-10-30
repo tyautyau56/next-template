@@ -1,13 +1,13 @@
 {
   "name": "next-template",
   "version": "1.0.0",
-  "main": "src/pages/index.ts",
+  "main": "src/pages/index.tsx",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "webpack"
+    "build": "webpack",
     "start": "next start"
-  }
+  },
   "dependencies": {
     "next": "^10.0.0",
     "react": "^17.0.1",
