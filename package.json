@@ -1,7 +1,7 @@
 {
   "name": "next-template",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "src/pages/index.ts",
   "author": "tyautyau56 <i19yanagi@gmail.com>",
   "license": "MIT",
   "dependencies": {
