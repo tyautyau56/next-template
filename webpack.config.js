@@ -32,6 +32,32 @@ module.exports = {
                     }
                 ]
             },
+            //  sass関係
+            {test: /\.sass/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            //  css内のurl()メソッドの取り込みを禁止
+                            url: false,
+                            //  ソースマップを有効にする
+                            sourceMap: enabledSourceMap,
+                            // 0 => no loaders (default);
+                            // 1 => postcss-loader;
+                            // 2 => postcss-loader, sass-loader
+                            importLoaders: 2
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            //  ソースマップの利用有無
+                            sourceMap: enabledSourceMap
+                        }
+                    }
+                ]
+            },
         ],
     },
     resolve: {
