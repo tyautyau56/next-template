@@ -43,9 +43,9 @@ module.exports = {
                             url: false,
                             //  ソースマップを有効にする
                             sourceMap: enabledSourceMap,
-                            // 0 => no loaders (default);
-                            // 1 => postcss-loader;
-                            // 2 => postcss-loader, sass-loader
+                            //  0 => no loaders (default);
+                            //  1 => postcss-loader;
+                            //  2 => postcss-loader, sass-loader
                             importLoaders: 2
                         }
                     },
@@ -59,9 +59,9 @@ module.exports = {
                 ]
             },
             {
-                // 対象となるファイルの拡張子
+                //  対象となるファイルの拡張子
                 test: /\.(gif|png|jpg|eot|wof|woff|ttf|svg)$/,
-                // 画像をBase64として取り込む
+                //  画像をBase64として取り込む
                 type: "asset/inline",
             },
         ],
