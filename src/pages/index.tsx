@@ -1,8 +1,3 @@
-import Head from 'next/head';
-import '../styles/main.scss';
+import styles from '../styles/index.module.scss';
 
-export default function Home() {
-    return(
-        <h1>next-template</h1>
-    )
-}
+export default () => <p className={styles.scss_test}>Hello World!</p>
