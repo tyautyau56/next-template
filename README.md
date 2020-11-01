@@ -6,8 +6,9 @@ next+webpack+typecriptのテンプレート
 ├── README.md
 ├── src
 │  └── pages
-│     └── index.tsx
-├── styles
+│  | └── index.tsx
+|  └── styles
+|    └──index.module.scss 
 ├── tsconfig.json
 └── yarn.lock
 ```
