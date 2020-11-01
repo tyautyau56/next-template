@@ -1,6 +1,6 @@
 const path = require('path')
 //  productionが本番、developmentが開発用(productionの時は利用しない)
-const enabledSourceMap = MODE === "development"
+MODE = "development"
 
 module.exports = {
 
