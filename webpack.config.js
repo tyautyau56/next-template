@@ -3,7 +3,8 @@ const path = require('path')
 MODE = "development"
 
 module.exports = {
-
+    //ソースマップを有効にする
+    devtool: 'source-map',
     mode: MODE,
     //  エントリーポイントを./src/pages/index.tsxにする
     entry: path.resolve(__dirname, './src/pages/index.tsx'),
@@ -26,14 +27,12 @@ module.exports = {
                         options: {
                             //  CSS内のurl()メソッドの取り込みを禁止
                             url: false,
-                            //  ソースマップを有効にする
-                            sourceMap: enabledSourceMap
                         }
                     }
                 ]
             },
             //  sass関係
-            {test: /\.sass/,
+            /* {test: /\.sass/,
                 use: [
                     'style-loader',
                     {
@@ -41,8 +40,6 @@ module.exports = {
                         options: {
                             //  css内のurl()メソッドの取り込みを禁止
                             url: false,
-                            //  ソースマップを有効にする
-                            sourceMap: enabledSourceMap,
                             //  0 => no loaders (default);
                             //  1 => postcss-loader;
                             //  2 => postcss-loader, sass-loader
@@ -51,11 +48,19 @@ module.exports = {
                     },
                     {
                         loader: 'sass-loader',
-                        options: {
-                            //  ソースマップの利用有無
-                            sourceMap: enabledSourceMap
-                        }
                     }
+                ]
+            },*/
+            {
+                test: /\.(sa|sc|c)ss$/,
+                exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: { url: false }
+                    },
+                    'sass-loader'
                 ]
             },
             {
@@ -69,5 +74,5 @@ module.exports = {
     resolve: {
         extensions: [".ts", "tsx", "js", "json"]
     },
-    target: ["web", "ES5"]
+    target: ["web"]
 }
