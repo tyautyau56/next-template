@@ -16,7 +16,6 @@ module.exports = {
     module: {
         rules: [
             //  typescriptをts-loaderで変換
-            //
             {
                 test: /\.ts|.tsx$/,
                 use: [
@@ -44,25 +43,6 @@ module.exports = {
                 ]
             },
             //  sass関係
-            /* {test: /\.sass/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            //  css内のurl()メソッドの取り込みを禁止
-                            url: false,
-                            //  0 => no loaders (default);
-                            //  1 => postcss-loader;
-                            //  2 => postcss-loader, sass-loader
-                            importLoaders: 2
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                    }
-                ]
-            },*/
             {
                 test: /\.(sa|sc|c)ss$/,
                 exclude: /node_modules/,
