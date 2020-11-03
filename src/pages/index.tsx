@@ -6,6 +6,5 @@ export default function Index(){
             <p>Hello World!</p>
             <p className={styles.scss_test}>Hello Next</p>
         </div>
-
     )
 }
