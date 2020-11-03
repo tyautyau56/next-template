@@ -16,7 +16,22 @@ module.exports = {
     module: {
         rules: [
             //  typescriptをts-loaderで変換
-            {test: /\.tsx?$/, use: 'ts-loader'},
+            {
+                test: /\.ts|.tsx$/,
+                use: [
+                    // 下から順に処理される
+                    { loader: "babel-loader",
+                        options: {
+                            presets:
+                                [
+                                    '@babel/preset-env',
+                                    '@babel/preset-react'
+                                ]
+                        }},
+                    { loader: "ts-loader" }
+                ],
+                exclude: /node_modules/
+            },
             //  css関係
             {test: /\.css$/,
                 use: [
@@ -32,25 +47,6 @@ module.exports = {
                 ]
             },
             //  sass関係
-            /* {test: /\.sass/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            //  css内のurl()メソッドの取り込みを禁止
-                            url: false,
-                            //  0 => no loaders (default);
-                            //  1 => postcss-loader;
-                            //  2 => postcss-loader, sass-loader
-                            importLoaders: 2
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                    }
-                ]
-            },*/
             {
                 test: /\.(sa|sc|c)ss$/,
                 exclude: /node_modules/,
