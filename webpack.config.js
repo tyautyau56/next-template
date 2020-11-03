@@ -16,7 +16,19 @@ module.exports = {
     module: {
         rules: [
             //  typescriptをts-loaderで変換
-            {test: /\.tsx?$/, use: 'ts-loader'},
+            //
+            {
+                test: /\.ts|.tsx$/,
+                use: [
+                    // 下から順に処理される
+                    { loader: "babel-loader",
+                        options: {
+                            presets: ['@babel/preset-react']
+                        }},
+                    { loader: "ts-loader" }
+                ],
+                exclude: /node_modules/
+            },
             //  css関係
             {test: /\.css$/,
                 use: [
