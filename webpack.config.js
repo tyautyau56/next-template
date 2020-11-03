@@ -22,7 +22,11 @@ module.exports = {
                     // 下から順に処理される
                     { loader: "babel-loader",
                         options: {
-                            presets: ['@babel/preset-react']
+                            presets:
+                                [
+                                    '@babel/preset-env',
+                                    '@babel/preset-react'
+                                ]
                         }},
                     { loader: "ts-loader" }
                 ],
