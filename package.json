@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "src/pages/index.tsx",
   "license": "MIT",
+  "author": "tyautyau56",
   "scripts": {
     "dev": "next dev",
     "build": "webpack",
