@@ -70,5 +70,10 @@ module.exports = {
     resolve: {
         extensions: [".ts", "tsx", "js", "json"]
     },
-    target: ["web"]
+    target: ["web"],
+    // webpack-dev-serverの設定
+    devServer: {
+        contentBase: './',
+        port: 8080
+    }
 }
